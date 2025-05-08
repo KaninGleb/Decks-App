@@ -13,12 +13,12 @@ export const decksApi = {
   },
 }
 
-type FetchDecksResponse = {
+export type FetchDecksResponse = {
   items: Deck[]
   pagination: Pagination
 }
 
-type Deck = {
+export type Deck = {
   author: Author
   id: string
   userId: string
@@ -31,12 +31,12 @@ type Deck = {
   cardsCount: number
 }
 
-type Author = {
+export type Author = {
   id: string
   name: string
 }
 
-type Pagination = {
+export type Pagination = {
   currentPage: number
   itemsPerPage: number
   totalPages: number
