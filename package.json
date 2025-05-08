@@ -1,5 +1,6 @@
 {
   "name": "decks-app",
+  "homepage": "https://KaninGleb.github.io/Decks-App",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite --open",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "axios": "1.8.2",
@@ -28,6 +31,7 @@
     "eslint": "9.26.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react-refresh": "0.4.3",
+    "gh-pages": "^6.3.0",
     "typescript": "5.1.6",
     "vite": "6.3.4"
   }
