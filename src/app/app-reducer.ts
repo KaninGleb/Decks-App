@@ -5,13 +5,24 @@ const initialState = {
   error: null as string | null,
 }
 
-type AppStateType = typeof initialState
+export const SetAppStatusAC = (status: RequestStatusType) => ({
+  type: 'APP/SET-STATUS',
+  status,
+}) as const
 
 export const appReducer = (state: AppStateType = initialState, action: ActionsType): AppStateType => {
   switch (action.type) {
+    case 'APP/SET-STATUS': {
+      return { ...state, status: action.status }
+    }
+
     default:
       return state
   }
 }
 
-type ActionsType = any
+type AppStateType = typeof initialState
+
+type ActionsType = UpdateLoadingStatusAT
+
+type UpdateLoadingStatusAT = ReturnType<typeof SetAppStatusAC>
